@@ -1,0 +1,29 @@
+--SELECT (SELECT 'LUCAS') AS SUB_CONSULTA
+
+/*SELECT * FROM 
+(
+SELECT C.ID_CLIENTE, C.NOME, V.DATA_VENDA 
+FROM tbl_Clientes C
+INNER JOIN tbl_Vendas V ON (C.ID_CLIENTE = V.ID_CLIENTE)
+) AS TESTE*/
+
+
+--select normal
+SELECT Cl.NOME, Ve.QUANTIDADE * Pr.PRECO Total
+FROM tbl_Clientes Cl
+INNER JOIN tbl_Vendas Ve ON (Cl.ID_CLIENTE = Ve.ID_CLIENTE)
+INNER JOIN tbl_Produtos Pr ON (Ve.ID_PRODUTO = Pr.ID_PRODUTO)
+
+
+SELECT Resultado.NOME, SUM(Resultado.Total) as TOTAL
+FROM
+(
+	SELECT Cl.NOME, Ve.QUANTIDADE * Pr.PRECO Total
+	FROM tbl_Clientes Cl
+	INNER JOIN tbl_Vendas Ve ON Cl.ID_CLIENTE = Ve.ID_CLIENTE
+	INNER JOIN tbl_Produtos Pr ON Ve.ID_PRODUTO = Pr.ID_PRODUTO
+) AS Resultado
+GROUP BY Resultado.NOME
+ORDER BY TOTAL
+
+

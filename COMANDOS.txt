@@ -1,0 +1,5 @@
+-- ULTIMO VIDEOS -> 30 - T-SQL - Concatenação de Strings - SQL Server
+
+sp_helpdb db_Biblioteca --(Informações do banco de dados)
+sp_help tbl_Autores --(Informações da tabela)
+ctrl r -- limpa aba resultados

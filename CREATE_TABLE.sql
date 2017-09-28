@@ -1,0 +1,24 @@
+USE db_Biblioteca
+
+CREATE TABLE tbl_Livro (
+	ID_Livro INT PRIMARY KEY IDENTITY(100,1),
+	Nome_Livro VARCHAR (50) NOT NULL,
+	ISBN VARCHAR (30) NOT NULL UNIQUE,
+	ID_AUTOR INT NOT NULL,
+	Data_Pub DATETIME NOT NULL,
+	Preco_Livro MONEY NOT NULL);
+	
+	
+	
+	
+CREATE TABLE tbl_Autores (
+	Id_Autor INT PRIMARY KEY IDENTITY,
+	Nome_Autor VARCHAR (50) NOT NULL,
+	Sobrenome_Autor VARCHAR (60) NOT NULL);
+	
+	
+
+
+CREATE TABLE tbl_Editoras (
+	Id_Editora INT PRIMARY KEY IDENTITY,
+	Nome_Editora VARCHAR (50) NOT NULL);
